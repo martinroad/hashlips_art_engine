@@ -1,3 +1,4 @@
+// 生成像素图，在终端运行：npm run pixelate
 const fs = require("fs");
 const path = require("path");
 const { createCanvas, loadImage } = require("canvas");

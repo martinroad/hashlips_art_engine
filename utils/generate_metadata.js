@@ -1,3 +1,4 @@
+// 生成NFT的元数据，在终端运行：npm run generate_metadata
 const fs = require("fs");
 const path = require("path");
 const { createCanvas, loadImage } = require("canvas");

@@ -1,3 +1,4 @@
+// 生成一张元数据的稀有属性，在终端运行：npm run rarity
 const basePath = process.cwd();
 const fs = require("fs");
 const layersDir = `${basePath}/layers`;

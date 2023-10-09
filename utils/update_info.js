@@ -1,3 +1,4 @@
+// 修改了ipfs地址后批量修改NFT元数据，在终端运行：npm run update_info
 const basePath = process.cwd();
 const { NETWORK } = require(`${basePath}/constants/network.js`);
 const fs = require("fs");

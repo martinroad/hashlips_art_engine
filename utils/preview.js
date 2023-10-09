@@ -1,3 +1,4 @@
+// 生成一张预览图，在终端运行：npm run preview
 const basePath = process.cwd();
 const fs = require("fs");
 const { createCanvas, loadImage } = require("canvas");

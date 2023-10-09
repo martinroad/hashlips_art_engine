@@ -1,3 +1,4 @@
+// 生成一张会动的gif图，在终端运行：npm run preview_gif
 const basePath = process.cwd();
 const fs = require("fs");
 const { createCanvas, loadImage } = require("canvas");
