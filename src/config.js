@@ -24,8 +24,8 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
-    layersOrder: [
+    growEditionSizeTo: 20,  // 需要生成图片的数量，图片资源最好用.png格式，有些图片需要设置透明度
+    layersOrder: [ // 图层是自下而上的，Background是最下面的图层，Top lid 是最上面的图层
       { name: "Background" },
       { name: "Eyeball" },
       { name: "Eye color" },
@@ -41,7 +41,8 @@ const shuffleLayerConfigurations = false;
 
 const debugLogs = false;
 
-const format = {
+// 修改画布大小，也就是图像尺寸（单位：像素），与原素材的尺寸有关，需要和原素材尺寸保持一致
+const format = {  
   width: 512,
   height: 512,
   smoothing: false,
@@ -67,13 +68,15 @@ const text = {
   spacer: " => ",
 };
 
+// 生成像素图，在终端运行：npm run pixelate
 const pixelFormat = {
-  ratio: 2 / 128,
+  ratio: 10 / 128,
 };
 
+// 图像的背景
 const background = {
-  generate: true,
-  brightness: "80%",
+  generate: false,  // generate = true 代表背景存在，如果原素材没有背景，程序生产时会自动添加随机的背景色
+  brightness: "60%", // 背景色的明暗程序，数字越大，背景色越亮
   static: false,
   default: "#000000",
 };
@@ -84,15 +87,17 @@ const rarityDelimiter = "#";
 
 const uniqueDnaTorrance = 10000;
 
+// 输出排列预览图，将已经生成好的图片排列在一起生成一个预览图，在终端运行：npm run preview
 const preview = {
-  thumbPerRow: 5,
-  thumbWidth: 50,
+  thumbPerRow: 5, // 设置预览图每行多少张
+  thumbWidth: 50, // 设置预览图多少列
   imageRatio: format.height / format.width,
   imageName: "preview.png",
 };
 
+// 将已经生成好的图像自动排序后，生成一张会动的gif图，在终端运行：npm run preview_gif
 const preview_gif = {
-  numberOfImages: 5,
+  numberOfImages: 5, // gif图循环播放多少张图像
   order: "ASC", // ASC, DESC, MIXED
   repeat: 0,
   quality: 100,
